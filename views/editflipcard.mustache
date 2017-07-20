@@ -1,0 +1,11 @@
+edit card
+{{#flipcard}}
+<form method= 'post' action = '/decks/{{deckId}}/edit/{{id}}'> 
+
+    <input type="text" name="question" value="{{question}}">
+    <input type="text" name="answer" value="{{answer}}">
+    <button type="submit">save</button>
+
+</form>
+
+{{/flipcard}}

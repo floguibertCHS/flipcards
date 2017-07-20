@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>All Decks</title>
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<script src="https://use.fontawesome.com/00e42f7d6a.js"></script>
+    </head>
+    <body>
+        <a href="/newdeck">Add a Deck</a>
+        <a href="/logout">Log out</a>
+        <h2>Welcome to FlipCard's Dashboard!</h2>
+        <h3> Start a quiz by clicking any deck below </h3>
+
+        </div>  
+        {{#decks}}
+        <a href="/decks/{{id}}">
+        <div id="main" >
+            <div id="header" > 
+                <div class="inner">
+                    <div class="efect one">
+                        <h1>{{deckname}}</h1>
+                        </div>                    
+                        <form method= 'delete' action = '/delete/{{id}}'>
+                        <button type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                        </form>
+                    </div>
+            </div>          
+        </div>  
+        </a>
+    {{/decks}}          
+
+</body>
+</html>
+       
+   

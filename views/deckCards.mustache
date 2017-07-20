@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FlipCard</title>
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<script src="https://use.fontawesome.com/00e42f7d6a.js"></script>
+    </head>
+    <body>
+       <div> 
+        <a href='/alldecks'>Dashboard</a>
+        <a href='/decks/{{deckId}}/newflipcard'>Add a card</a>
+        <a href="/logout">Log out</a>
+      </div>    
+    <h2>The {{deckname}} deck</h2>
+        <h3> Flip the card to view the answer</h3>
+        <p>Hit thumbs up or down to track you answers</p>
+        <p><i class="fa fa-thumbs-up" aria-hidden="true"></i>{{rights}} <i class="fa fa-thumbs-down" aria-hidden="true"></i>{{wrongs}}</p>
+<div id="main">
+    {{#flipcards}}
+            <div id="header">
+                <div class="inner">
+                    <div class="efect one">
+                        <h1>{{question}}</h1>
+                           
+                    </div>                    
+                    <div class="efect two">
+                        <h1>{{answer}}</h1>
+                        <form method= 'post' action = '/decks/{{deckId}}/flipcard/{{id}}/right'>
+                            <button type="submit"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+                        </form>  
+                        <form method= 'post' action = '/decks/{{deckId}}/flipcard/{{id}}/wrong'>
+                            <button type="submit"><i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
+                        </form> 
+                        <a href="/decks/{{deckId}}/edit/{{id}}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+
+                        <form method= 'post' action = '/decks/{{deckId}}/delete/{{id}}'>
+                        <button type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+</form>
+                        
+
+                    </div>
+                </div>                
+            </div>  
+            {{/flipcards}}
+        </div> 
+       <script type="text/javascript" src="/app.js"></script> 
+</body>
+</html>
+       
+   
